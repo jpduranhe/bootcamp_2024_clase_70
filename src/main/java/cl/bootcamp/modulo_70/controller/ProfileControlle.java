@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/profile")
 public class ProfileControlle {
 	
-	@Secured({"ROLE_ADMIN","ROLE_USER"})
+	@Secured({"ROLE_ADMIN","ROLE_MANAGER"})
 	@GetMapping
 	public String home(Authentication authentication) {
 		return "profile.jsp";
