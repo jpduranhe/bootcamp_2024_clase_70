@@ -66,11 +66,7 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService  {
 			GrantedAuthority ga= new SimpleGrantedAuthority("ROLE_"+usuario.getRol().name());
 			permissions.add(ga);
 			
-			//ServletRequestAttributes attr= (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
 			
-			//HttpSession session= attr.getRequest().getSession(true);
-			
-			//session.setAttribute("usuariosession", usuario);
 			return new User(usuario.getUsername(),usuario.getPassword(),permissions);
 		}
 		
