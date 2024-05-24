@@ -1,5 +1,6 @@
 package cl.bootcamp.modulo_70.controller;
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,12 +21,13 @@ public class UserController {
 		this.usuarioService=usuarioService;
 	}
 	
-
+	@Secured({"ROLE_ADMIN","ROLE_MANAGER"})
 	@GetMapping("/form")
 	public String formGet(@RequestParam(defaultValue="false") boolean creado ) {		
 	
 		return "usuario-form.jsp";
 	}
+	@Secured({"ROLE_ADMIN","ROLE_MANAGER"})
 	@PostMapping("/form")
 	public String formPost(@ModelAttribute Usuario usuario) {
 		

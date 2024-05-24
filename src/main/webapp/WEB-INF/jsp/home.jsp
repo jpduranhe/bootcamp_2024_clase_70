@@ -35,7 +35,10 @@
           	<ul>
             	<li> <a href ="<c:url value ="/public"/>" > Sección Pública</a></li>
             	<li> <a href ="<c:url value ="profile"/>" > Perfil</a></li>
-            	<li> <a href ="<c:url value ="/usuario/form"/>" > Formulario Usuario</a></li>
+            	<sec:authorize access="hasRole('ROLE_ADMIN')">
+				<li> <a href ="<c:url value ="/usuario/form"/>" > Formulario Usuario</a></li>
+				</sec:authorize>
+            	
             </ul>
         </div>
       </div>

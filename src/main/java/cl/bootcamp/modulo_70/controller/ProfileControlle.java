@@ -20,7 +20,7 @@ public class ProfileControlle {
 		this.userService= userService;
 	}
 	
-	//@Secured({"ROLE_ADMIN","ROLE_MANAGER"})
+	
 	@GetMapping
 	public ModelAndView home(Authentication authentication) {
 		ModelAndView mav= new ModelAndView("profile.jsp");
