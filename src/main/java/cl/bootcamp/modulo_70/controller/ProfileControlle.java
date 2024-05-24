@@ -1,6 +1,6 @@
 package cl.bootcamp.modulo_70.controller;
 
-import org.springframework.security.access.annotation.Secured;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +23,7 @@ public class ProfileControlle {
 	
 	@GetMapping
 	public ModelAndView home(Authentication authentication) {
-		ModelAndView mav= new ModelAndView("profile.jsp");
+		ModelAndView mav= new ModelAndView("usuario/profile.jsp");
 		Usuario usuario=userService.getByUsername(authentication.getName());
 		mav.addObject("user",usuario);
 		

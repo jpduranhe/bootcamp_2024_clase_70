@@ -38,6 +38,8 @@
             	<sec:authorize access="hasRole('ROLE_ADMIN')">
 				<li> <a href ="<c:url value ="/usuario/form"/>" > Formulario Usuario</a></li>
 				</sec:authorize>
+				<li> <a href ="<c:url value ="/usuario/listado"/>" > Listado de Usuario</a></li>
+				<li> <a href ="<c:url value ="/logout"/>" > Salir</a></li>
             	
             </ul>
         </div>

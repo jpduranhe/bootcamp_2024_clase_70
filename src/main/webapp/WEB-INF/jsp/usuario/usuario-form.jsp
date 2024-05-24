@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +30,22 @@
             <div class ="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h1>Formulario de Usuario</h1>
+						<h1>Listado de Usuarios</h1>
+						
+						
+						
+						<div class="row">
+							<div class="col-md-6">
+								<c:if test="${creado}">
+								<div class="alert alert-success alert-dismissible fade show" role="alert">
+								 	Usuario creado exitosamente
+								 	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+								</div>
+								</c:if>
+							</div>
+						</div>
+						
+						
 						<form action="#" method="post">
 					      
 						  <div class="mb-3">
@@ -72,5 +88,6 @@
     </div>
   </div>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
