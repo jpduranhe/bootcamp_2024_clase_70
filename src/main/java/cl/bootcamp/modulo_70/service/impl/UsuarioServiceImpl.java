@@ -2,6 +2,7 @@ package cl.bootcamp.modulo_70.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -60,18 +61,18 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService  {
 	public int editar(Usuario usuario) {
 		try {
 			
+			Optional<UsuarioEntity> usuarioEntityGuardadoOptional = usuarioRepository.findById(usuario.getId());
+		
+			if(usuarioEntityGuardadoOptional.isEmpty()) return -1;
 			
-			UsuarioEntity usuarioEntity= new UsuarioEntity();
-			String hashPass=new BCryptPasswordEncoder().encode(usuario.getPassword());
-			usuarioEntity.setId(usuario.getId());
-			usuarioEntity.setNombre(usuario.getNombre());
-			usuarioEntity.setApellido(usuario.getApellido());
-			usuarioEntity.setEmail(usuario.getEmail());
-			usuarioEntity.setRol(usuario.getRol());
-			usuarioEntity.setPassword(hashPass);
-			usuarioEntity.setUsername(usuario.getUsername());
+			UsuarioEntity usuarioEntityGuardado =usuarioEntityGuardadoOptional.get();
+		
+			usuarioEntityGuardado.setNombre(usuario.getNombre());
+			usuarioEntityGuardado.setApellido(usuario.getApellido());
+			usuarioEntityGuardado.setEmail(usuario.getEmail());
+			usuarioEntityGuardado.setRol(usuario.getRol());
 			
-			UsuarioEntity usuarioGuardado=usuarioRepository.save(usuarioEntity);
+			UsuarioEntity usuarioGuardado=usuarioRepository.save(usuarioEntityGuardado);
 			
 			return usuarioGuardado.getId();
 			
