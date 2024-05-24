@@ -80,4 +80,19 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService  {
 		return null;
 	}
 
+
+	@Override
+	public Usuario getByUsername(String username) {
+		UsuarioEntity usuarioEntity=  usuarioRepository.searchByUsername(username);
+		if(usuarioEntity== null) return null;
+		
+		Usuario usuario= new Usuario();
+		usuario.setNombre(usuarioEntity.getNombre());
+		usuario.setApellido(usuarioEntity.getApellido());
+		usuario.setEmail(usuarioEntity.getEmail());
+		usuario.setUsername(usuarioEntity.getUsername());
+		usuario.setRol(usuarioEntity.getRol());
+		return usuario;
+	}
+
 }
