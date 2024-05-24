@@ -26,6 +26,14 @@ public class UsuarioEntity  {
 	@Column(name="password")
 	private String password;
 	
+	@Column(name="nombre")
+	private String nombre;
+	@Column(name="apellido")
+	private String apellido;
+	
+	@Column(name="email")
+	private String email;
+	
 	@Enumerated(EnumType.STRING)
 	@Column(name="rol")
 	private Rol rol;

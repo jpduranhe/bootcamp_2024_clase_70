@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,7 +37,13 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService  {
 			
 			
 			UsuarioEntity usuarioEntity= new UsuarioEntity();
-			usuarioEntity.setPassword(usuario.getPassword());
+			String hashPass=new BCryptPasswordEncoder().encode(usuario.getPassword());
+			
+			usuarioEntity.setNombre(usuario.getNombre());
+			usuarioEntity.setApellido(usuario.getApellido());
+			usuarioEntity.setEmail(usuario.getEmail());
+			usuarioEntity.setRol(usuario.getRol());
+			usuarioEntity.setPassword(hashPass);
 			usuarioEntity.setUsername(usuario.getUsername());
 			
 			UsuarioEntity usuarioGuardado=usuarioRepository.save(usuarioEntity);

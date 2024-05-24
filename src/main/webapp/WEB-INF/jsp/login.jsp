@@ -18,7 +18,7 @@
             <h3 class="mb-5">Login</h3>
 			<form  action="/login" method="post">
 	            <div data-mdb-input-init class="form-outline mb-4">
-	              <input type="email" name="username" id="typeEmailX-2" class="form-control form-control-lg" />
+	              <input type="text" name="username" id="typeEmailX-2" class="form-control form-control-lg" />
 	              <label class="form-label" for="typeEmailX-2">Usuario</label>
 	            </div>
 	

@@ -35,6 +35,7 @@
           	<ul>
             	<li> <a href ="<c:url value ="/public"/>" > Sección Pública</a></li>
             	<li> <a href ="<c:url value ="profile"/>" > Perfil</a></li>
+            	<li> <a href ="<c:url value ="/usuario/form"/>" > Formulario Usuario</a></li>
             </ul>
         </div>
       </div>
