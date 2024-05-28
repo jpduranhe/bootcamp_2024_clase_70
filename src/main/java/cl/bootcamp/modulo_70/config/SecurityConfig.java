@@ -23,7 +23,7 @@ public class SecurityConfig {
 	@Bean
     SecurityFilterChain securityFilter(HttpSecurity http) throws Exception {
 		
-		String[] matchers = new String[] {"/public/**"};
+		String[] matchers = new String[] {"/public/**","/api/**"};
 		return http
 				.authorizeHttpRequests(request -> 
         				request.requestMatchers(matchers).permitAll())

@@ -37,10 +37,10 @@
 						<div class="row">
 							<div class="col-md-6">
 								<c:if test="${creado}">
-								<div class="alert alert-success alert-dismissible fade show" role="alert">
-								 	Usuario creado exitosamente
-								 	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-								</div>
+									<div class="alert alert-success alert-dismissible fade show" role="alert">
+									 	Usuario creado exitosamente
+									 	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+									</div>
 								</c:if>
 							</div>
 						</div>
